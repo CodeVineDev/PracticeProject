@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 400px;
+  margin: auto;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top{
+  margin-bottom: 2rem;
+}
+ul {
+  list-style: none;
+}
+
+ul .task-list {
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.list-option{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: .5rem;
+}
+.list-option div{
+  cursor: pointer;
+}
+.task.active{
+  text-decoration: line-through;
+  color: grey;
+}

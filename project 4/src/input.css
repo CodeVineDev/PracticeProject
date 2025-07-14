@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: pink;
+  --color-accent: red;
+  --radius-lg: 1rem;
+  --spacing-xxl: 10rem;
+}
