@@ -1,11 +1,17 @@
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 const addTask = document.querySelector("#addtask");
 const taskListCon = document.querySelector("#tasklist-con");
 const input = document.querySelector("#newtask");
+
+function saveTask(){
+ localStorage.setItem(tasks, JSON.stringify(task))
+}
 
 addTask.addEventListener("click", () => {
   const taskText = input.value.trim();
 
   if (taskText === "") return;
+  tasks.push({ text: taskText, completed: false });
   const li = document.createElement("li");
   const task = document.createElement("div");
   const option = document.createElement("div");
@@ -36,5 +42,7 @@ addTask.addEventListener("click", () => {
   })
   option.appendChild(complete);
   option.appendChild(clear);
+
+  saveTask()
   input.value = "";
 });

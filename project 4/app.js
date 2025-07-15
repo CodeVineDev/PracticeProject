@@ -6,9 +6,9 @@ window.addEventListener("load", () => {
   navBtn.addEventListener("click", () => {
     if (navBar.classList.contains("h-22")) {
       navBar.classList.remove("h-22");
-      navBar.classList.add("h-[16rem]");
+      navBar.classList.add("h-[25rem]");
     } else {
-      navBar.classList.remove("h-[16rem]");
+      navBar.classList.remove("h-[25rem]");
       navBar.classList.add("h-22");
     }
   });
