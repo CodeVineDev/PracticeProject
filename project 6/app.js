@@ -5,5 +5,5 @@ const confirmPswd = document.getElementById("name");
 const submit = document.getElementById("submit");
 
 
-submit.addEventListener("click", ()=>{
-})
+// submit.addEventListener("click", ()=>{
+// })
