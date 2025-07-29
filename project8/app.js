@@ -1,24 +1,25 @@
-const calendar = document.getElementById("calender");
+fetch(
+  "https://api.storyblok.com/v2/cdn/stories/my-home?version=draft&token=QByTQEQaL8cMuMXr6NQ8eQtt"
+)
+  .then((res) => res.json())
+  .then((data) => {
+    const bodyBlocks = data.story.content.body;
 
-const drawBlankCalendar = () => {
-  for (let i = 0; i < 35; i++) {
-    const day = document.createElement("div");
-    day.classList.add("day");
+    // Find the block with the component name "home-section"
+    const homeSection = bodyBlocks.find(
+      (block) => block.component === "hero-section"
+    );
 
-    const dayText = document.createElement("p");
-    dayText.classList.add("day-text");
+    if (homeSection) {
+      const title = homeSection.title;
+      const desc = homeSection.description;
 
-    const dayNumber = document.createElement("p");
-    dayNumber.classList.add("day-number");
-
-    const eventName = document.createElement("small");
-    eventName.classList.add("event-name");
-
-    day.appendChild(dayText);
-    day.appendChild(dayNumber);
-    day.appendChild(eventName);
-    calendar.appendChild(day);
-  }
-};
-
-drawBlankCalendar();
+      document.getElementById("title").textContent = title;
+      document.getElementById("desc").textContent = desc;
+    } else {
+      console.warn("hero-section block not found!");
+    }
+  })
+  .catch((error) => {
+    console.error("Failed to fetch:", error);
+  });

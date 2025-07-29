@@ -8,27 +8,3 @@
 body {
   background: #312e81;
 }
-.container {
-  width: min(97%, 1200px);
-  margin: 0 auto;
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-#calender {
-  display: grid;
-  grid-template-columns: repeat(7, 150px);
-  gap: 3px;
-}
-.day{
-    width: 150px;
-    height: 150px;
-    padding: 10px;
-    background: #6366f1;
-    border-radius: 3px;
-    transition: 200ms ease-in-out;
-}
-.day:hover{
-    background: #4f46e5;
-}
